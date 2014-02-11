@@ -43,7 +43,6 @@ var alive = (function() {
 
 	a.getDays = function(birth) {
 		if (!birth) {
-			console.log('birth not defined.');
 			return NaN;
 		}
 
@@ -104,10 +103,42 @@ var alive = (function() {
 $(document).ready(function() {
 	var birth = new Date(1994, 7, 24);
 
-	$('.content').html(alive.getYears(birth) + " years\n");
-	$('.content').append(alive.getMonths(birth) + " months\n");
-	$('.content').append(alive.getDays(birth) + " days\n");
-	$('.content').append(alive.getHours(birth) + " hours\n");
-	$('.content').append(alive.getMinutes(birth) + " minutes\n");
-	$('.content').append(alive.getSeconds(birth) + " seconds\n");
+	var id = setInterval(function() {
+		$('.years').html(alive.getYears(birth) + " years");
+		$('.months').html((alive.getMonths(birth) + " months").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('.days').html((alive.getDays(birth) + " days").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('.hours').html((alive.getHours(birth) + " hours").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('.minutes').html((alive.getMinutes(birth) + " minutes").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('.seconds').html((alive.getSeconds(birth) + " seconds").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+	}, 1000);
+
+	$('#years').click(function() {
+		$('.content div').hide();
+		$('.years').show();
+	});
+
+	$('#months').click(function() {
+		$('.content div').hide();
+		$('.months').show();
+	});
+
+	$('#days').click(function() {
+		$('.content div').hide();
+		$('.days').show();
+	});
+
+	$('#hours').click(function() {
+		$('.content div').hide();
+		$('.hours').show();
+	});
+
+	$('#minutes').click(function() {
+		$('.content div').hide();
+		$('.minutes').show();
+	});
+
+	$('#seconds').click(function() {
+		$('.content div').hide();
+		$('.seconds').show();
+	});
 });

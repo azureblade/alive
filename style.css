@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+body {
+	font-family: 'Lato', sans-serif;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 640px;
@@ -13,8 +17,30 @@
 }
 
 h1 {
-	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-size: 70px;
 	text-align: center;
+	padding-bottom: 25px;
+}
+
+.tabs {
+	list-style: none;
+	text-align: center;
+}
+
+.tabs li {
+	padding: 7px;
+	display: inline;
+}
+
+.tabs li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.content div {
+	font-size: 60px;
+	margin-top: 25px;
+	text-align: center;
+	display: none;
 }
