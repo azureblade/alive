@@ -104,12 +104,12 @@ $(document).ready(function() {
 	var birth = new Date(1994, 7, 24);
 
 	var id = setInterval(function() {
-		$('.years').html(alive.getYears(birth) + " years");
-		$('.months').html((alive.getMonths(birth) + " months").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-		$('.days').html((alive.getDays(birth) + " days").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-		$('.hours').html((alive.getHours(birth) + " hours").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-		$('.minutes').html((alive.getMinutes(birth) + " minutes").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-		$('.seconds').html((alive.getSeconds(birth) + " seconds").replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('.years').html(alive.getYears(birth) + ' years');
+		$('.months').html((alive.getMonths(birth) + ' months').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+		$('.days').html((alive.getDays(birth) + ' days').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+		$('.hours').html((alive.getHours(birth) + ' hours').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+		$('.minutes').html((alive.getMinutes(birth) + ' minutes').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+		$('.seconds').html((alive.getSeconds(birth) + ' seconds').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 	}, 1000);
 
 	$('#years').click(function() {
