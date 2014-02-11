@@ -23,6 +23,15 @@ h1 {
 	padding-bottom: 25px;
 }
 
+.picker {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.picker input {
+	margin-left: 15px;
+}
+
 .tabs {
 	list-style: none;
 	text-align: center;
