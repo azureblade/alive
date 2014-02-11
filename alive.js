@@ -128,10 +128,12 @@ var alive = (function() {
 
 $(document).ready(function() {
 	var id;
-
+	
 	$('#submit').click(function() {
+		$('.loading').show();
+
 		window.clearInterval(id);
-		$('.content div').html('');
+		// $('.content div').not('.loading').html('');
 
 		var birth = new Date($('#birth').val());
 		birth.setHours(24);
@@ -143,9 +145,9 @@ $(document).ready(function() {
 			$('.hours').html((alive.getHours(birth) + ' hours').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 			$('.minutes').html((alive.getMinutes(birth) + ' minutes').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 			$('.seconds').html((alive.getSeconds(birth) + ' seconds').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+			$('.loading').hide();
 		}, 1000);
 
-		$('.content div').hide();
 		$('.years').show();
 	});
 
