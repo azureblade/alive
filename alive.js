@@ -130,10 +130,10 @@ $(document).ready(function() {
 	var id;
 	
 	$('#submit').click(function() {
-		$('.loading').show();
+		$('.loading, .loading div').show();
 
 		window.clearInterval(id);
-		// $('.content div').not('.loading').html('');
+		$('.content div').not('.loading, .loading div').html('');
 
 		var birth = new Date($('#birth').val());
 		birth.setHours(24);
@@ -148,6 +148,7 @@ $(document).ready(function() {
 			$('.loading').hide();
 		}, 1000);
 
+		$('.content div').not('.loading, .loading div').hide();
 		$('.years').show();
 	});
 
