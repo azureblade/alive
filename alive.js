@@ -38,7 +38,33 @@ var alive = (function() {
 			return NaN;
 		}
 
-		return null;
+		var now = new Date();
+
+		var delta = now.getTime() - birth.getTime();
+
+		var seconds = Math.floor(delta / 1000);
+		var minutes = Math.floor(seconds / 60);
+		var hours = Math.floor(minutes / 60);
+		var days = Math.floor(hours / 24);
+
+		var months = 0;
+		var currMonth = 0;
+
+		while (days > 0) {
+			if (days - MONTH_DAYS[currMonth] >= 0) {
+				days -= MONTH_DAYS[currMonth];
+				months += 1;
+				currMonth += 1;
+			} else {
+				break;
+			}
+
+			if (currMonth > 11) {
+				currMonth = 0;
+			}
+		}
+
+		return months;
 	}
 
 	a.getDays = function(birth) {
