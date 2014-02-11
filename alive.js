@@ -148,36 +148,57 @@ $(document).ready(function() {
 			$('.loading').hide();
 		}, 1000);
 
+		$('.tabs li').removeClass('selected');
+		$('#years').addClass('selected');
+
 		$('.content div').not('.loading, .loading div').hide();
 		$('.years').show();
 	});
 
 	$('#years').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#years').addClass('selected');
+
 		$('.content div').hide();
 		$('.years').show();
 	});
 
 	$('#months').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#months').addClass('selected');
+
 		$('.content div').hide();
 		$('.months').show();
 	});
 
 	$('#days').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#days').addClass('selected');
+
 		$('.content div').hide();
 		$('.days').show();
 	});
 
 	$('#hours').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#hours').addClass('selected');
+
 		$('.content div').hide();
 		$('.hours').show();
 	});
 
 	$('#minutes').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#minutes').addClass('selected');
+
 		$('.content div').hide();
 		$('.minutes').show();
 	});
 
 	$('#seconds').click(function() {
+		$('.tabs li').removeClass('selected');
+		$('#seconds').addClass('selected');
+
 		$('.content div').hide();
 		$('.seconds').show();
 	});
